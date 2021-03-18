@@ -1,0 +1,14 @@
+[alias]
+  co = checkout
+  ci = commit
+  s = status
+  br = branch
+  pl = pull
+  ps = push
+  df = diff
+  l = log
+[user]
+	name = Gabriely
+	email = gabrielypaula98@hotmail.com
+[core]
+	editor = vim
