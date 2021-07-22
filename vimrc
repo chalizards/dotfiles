@@ -1,16 +1,15 @@
 " Force read encoding
 set encoding=utf-8
 
-" To work cool, disable compatibility with Vi
 set nocompatible
 
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
-
 Plug 'janko/vim-test'
 Plug 'junegunn/fzf'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/fzf.vim'
+
 Plug 'liuchengxu/space-vim-dark'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
@@ -18,14 +17,14 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'slashmili/alchemist.vim'
-
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/vim-emoji'
 call plug#end()
 
 filetype plugin indent on
 syntax enable
-
-color space-vim-dark
 
 " disable gui cursor styling
 set guicursor=
@@ -82,11 +81,7 @@ set autoread
 " Hidden buffer instead of close
 set hidden
 
-" transparent background
-hi Normal guibg=NONE ctermbg=NONE
-hi LineNr ctermbg=NONE guibg=NONE
-
-" moving lines 
+" Moving lines 
 nnoremap <silent> <C-k> :move-2<cr>
 nnoremap <silent> <C-j> :move+<cr>
 nnoremap <silent> <C-h> <<
@@ -98,8 +93,29 @@ xnoremap <silent> <C-l> >gv
 xnoremap < <gv
 xnoremap > >gv
 
-" fzf shortcut
-map ; :Files<CR>
+" Fzf shortcut
+map ff :Files<CR>
 
-" nerdtree shortcut
-map tree<CR> :NERDTree<CR>
+" Nerdtree shortcut
+map nd<CR> :NERDTree<CR>
+
+" Airline theme
+let g:airline_theme='fruit_punch'
+
+" Copy and paste shortcut
+set clipboard=unnamed
+
+vnoremap <C-c> "+y
+vnoremap <C-p> "+p
+
+" git gutter emoji
+let g:gitgutter_sign_added = emoji#for('sparkles')
+let g:gitgutter_sign_modified = emoji#for('pencil')
+let g:gitgutter_sign_removed = emoji#for('fire')
+let g:gitgutter_sign_modified_removed = emoji#for('collision')
+
+" Color scheme
+colorscheme space-vim-dark
+hi LineNr     ctermbg=NONE guibg=NONE
+hi SignColumn ctermbg=NONE guibg=NONE
+hi Normal     ctermbg=NONE guibg=NONE
