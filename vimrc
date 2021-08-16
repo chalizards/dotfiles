@@ -9,7 +9,7 @@ Plug 'janko/vim-test'
 Plug 'junegunn/fzf'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/fzf.vim'
-
+Plug 'rking/ag.vim'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
